@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Nmap 手册 | Evilxyz Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="0x00: 说明nmap 速查手册, 总结常用用法.
+
+0x01: nmap 功能介绍- Host discovery
+- Port discovery/enumeration
+- Service discovery
+- Operating system version detection
+- Hardware(MAC) address dection
+- Service version dete">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nmap 手册">
+<meta property="og:url" content="http://blog.evilxyz.com/2016/05/01/nmap-manual/index.html">
+<meta property="og:site_name" content="Evilxyz Blog">
+<meta property="og:description" content="0x00: 说明nmap 速查手册, 总结常用用法.
+
+0x01: nmap 功能介绍- Host discovery
+- Port discovery/enumeration
+- Service discovery
+- Operating system version detection
+- Hardware(MAC) address dection
+- Service version dete">
+<meta property="og:updated_time" content="2016-05-01T13:45:37.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nmap 手册">
+<meta name="twitter:description" content="0x00: 说明nmap 速查手册, 总结常用用法.
+
+0x01: nmap 功能介绍- Host discovery
+- Port discovery/enumeration
+- Service discovery
+- Operating system version detection
+- Hardware(MAC) address dection
+- Service version dete">
+  
+    <link rel="alternative" href="/atom.xml" title="Evilxyz Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/image/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/image/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">xyz</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">酷爱安全与运动</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/jottings">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/evilxyz" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/nmap/" style="font-size: 10px;">nmap</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/测试/" style="font-size: 20px;">测试</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友链1</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友链2</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">努力向前进, 不受羁绊 …</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">xyz</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/assets/image/avatar.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">xyz</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">酷爱安全与运动</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/jottings">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/evilxyz" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-nmap-manual" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/01/nmap-manual/" class="article-date">
+  	<time datetime="2016-05-01T02:25:43.000Z" itemprop="datePublished">2016-05-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nmap 手册
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nmap/">nmap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="0x00-说明"><a href="#0x00-说明" class="headerlink" title="0x00: 说明"></a>0x00: 说明</h2><pre><code>nmap 速查手册, 总结常用用法.
+</code></pre><p><br></p>
+<h2 id="0x01-nmap-功能介绍"><a href="#0x01-nmap-功能介绍" class="headerlink" title="0x01: nmap 功能介绍"></a>0x01: nmap 功能介绍</h2><pre><code>- Host discovery
+- Port discovery/enumeration
+- Service discovery
+- Operating system version detection
+- Hardware(MAC) address dection
+- Service version detection
+- Vulunerability/exploit detection, using Nmap scripts (NSE)
+</code></pre><a id="more"></a>
+<p><br></p>
+<h2 id="0x02-nmap-示例"><a href="#0x02-nmap-示例" class="headerlink" title="0x02: nmap 示例"></a>0x02: nmap 示例</h2><h4 id="简单nmap扫描例子-常用来第一阶段的测试"><a href="#简单nmap扫描例子-常用来第一阶段的测试" class="headerlink" title="简单nmap扫描例子, 常用来第一阶段的测试"></a>简单nmap扫描例子, 常用来第一阶段的测试</h4><ul>
+<li><p>Ping 扫描,列出MAC地址<br>  <code>nmap -sP 10.0.0.0/24</code><br><br></p>
+</li>
+<li><p>T(4)时间模板, SYN扫描, 全端口扫描, 端口识别(识别服务)<br>  <code>nmap -p 1-65535 -sV -sS -T4 target</code><br><br></p>
+</li>
+<li>详细输出, T(4)时间模板, SYN扫描, -A 参数包含OS和version探测, 显示tracertroute结果<br>  <code>nmap -v -sS -A -T4 target</code><br><br></li>
+<li>详细输出, T(5)时间模板, SYN扫描, -A 参数包含OS和version探测, 显示tracertroute结果<br>  <code>nmap -v -sS -A -T5 target</code><br><br></li>
+<li>详细输出, T(5)时间模板, SYN扫描, OS和version 探测<br>  <code>nmap -v -sV -O -sS -T5 target</code><br><br></li>
+<li>详细输出, T(4)时间模板, SYN扫描, OS和version 探测, 全端口扫描<br>  <code>nmap -v -p 1-65535 -sV -O -sS -T4 target</code><br><br></li>
+<li>详细输出, T(5)时间模板, SYN扫描, OS和version 探测, 全端口扫描<br>  <code>nmap -v -p 1-65535 -sV -O -sS -T5 target</code><br><br>  <big><strong><br>  攻击性扫描时间越快, 可能会导致错误的结果 !<br>  T5 使用了非常快的攻击性扫描时间, 并且可能会导致端口扫描结果不准确, 如果你需要快速扫描的话, T4 是一个折中的解决办法, 我经常使用T3来扫描.
+  </strong></big>
+
+
+</li>
+</ul>
+<p><br></p>
+<h4 id="从文件读取需要扫描的-IP列表"><a href="#从文件读取需要扫描的-IP列表" class="headerlink" title="从文件读取需要扫描的 IP列表"></a>从文件读取需要扫描的 IP列表</h4><ul>
+<li><code>nmap -iL ip-addresses.txt</code></li>
+</ul>
+<p><br></p>
+<h4 id="Nmap-输出格式"><a href="#Nmap-输出格式" class="headerlink" title="Nmap 输出格式"></a>Nmap 输出格式</h4><ul>
+<li>扫描的结果输出到屏幕, 同时会存储一份到grep-output.txt<br>  <code>nmap -sV -p 139,445 -oG grep-output.txt 10.0.1.0/24</code><br><br></li>
+<li>标准输出, 直接写入指定的文件<br>  <code>nmap -sS -A -v -T3 -Pn -oN /tmp/output.txt --script=vuln target</code></li>
+</ul>
+<p><br></p>
+<h4 id="Nmap-扫描-Netbios-例子"><a href="#Nmap-扫描-Netbios-例子" class="headerlink" title="Nmap 扫描 Netbios 例子"></a>Nmap 扫描 Netbios 例子</h4><ul>
+<li>在子网中发现开放netbios的IP<br>  <code>nmap -sV -v -p 139,445 10.0.0.1/24</code><br><br></li>
+<li>UDP方式扫描子网中开放的 137 端口, 并用脚本探测 Netbios name 和  Netbios mac<br>  <code>sudo nmap -sU --script nbstat.nse -p 137 --open 10.0.0.0/24</code><br><br></li>
+<li>扫描目标是否存在 MS08-067 漏洞, 或指定漏洞<br>  <code>nmap --script-args=unsafe=1 --script smb-vuln-ms08-067.nse -p 445 target</code><br><br>  <big><strong> --script-args=unsafe=1 有可能使服务器或服务崩溃 </strong></big>
+
+</li>
+</ul>
+<h4 id="Nmap-Nikto-扫描"><a href="#Nmap-Nikto-扫描" class="headerlink" title="Nmap Nikto 扫描"></a>Nmap Nikto 扫描</h4><ul>
+<li>扫描子网中的 http 服务器, 并通过管道让 nikto 去扫描<br>  <code>nmap -p80 10.0.1.0/24 -oG - | nikto.pl -h -</code><br><br></li>
+<li>扫描子网中的 http, https 服务器, 并通过管道让 nikto 去扫描<br>  <code>nmap -p80,443 10.0.1.0/24 -oG - | nikto.pl -h -</code></li>
+</ul>
+<p><br></p>
+<h2 id="0x03-nmap-参数详解"><a href="#0x03-nmap-参数详解" class="headerlink" title="0x03: nmap 参数详解"></a>0x03: nmap 参数详解</h2><h4 id="Nmap-支持-主机名-IP-网段-表示形式"><a href="#Nmap-支持-主机名-IP-网段-表示形式" class="headerlink" title="Nmap 支持 主机名, IP, 网段 表示形式"></a>Nmap 支持 主机名, IP, 网段 表示形式</h4><ul>
+<li>wooyun.org, wooyun.org/24, 192.168.0.1, 10.0.0-255.1-254<br><br></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-iL filename</td>
+<td>从文件中读取待检测的目标,文件中的表示方法支持主机名,ip,网段</td>
+</tr>
+<tr>
+<td>-iR num_hosts</td>
+<td>选择随机的互联网主机来扫描</td>
+</tr>
+<tr>
+<td>--exclude host1[, host2]</td>
+<td>从扫描任务中需要排除的主机</td>
+</tr>
+<tr>
+<td>--exculdefile exclude_file</td>
+<td>排除文件中的IP, 格式和-iL指定扫描文件的格式相同</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-sL</td>
+<td>列表中列出扫描的目标, 不进行扫描</td>
+</tr>
+<tr>
+<td>-sn</td>
+<td>Ping 扫描, 用来发现存活主机</td>
+</tr>
+<tr>
+<td>-Pn</td>
+<td>不检测主机存活</td>
+</tr>
+<tr>
+<td>-PS/PA/PU/PY[portlist]</td>
+<td>TCP SYN Ping/TCP ACK Ping/UDP Ping/SCTP Ping 发现</td>
+</tr>
+<tr>
+<td>-PE/PP/PM</td>
+<td>使用ICMP echo, timestamp and netmask 请求包发现主机</td>
+</tr>
+<tr>
+<td>-PO [prococol list]</td>
+<td>使用IP协议包探测对方主机是否开启</td>
+</tr>
+<tr>
+<td>-n/-R</td>
+<td>对IP进行域名反向解析/为所有的IP都进行域名的反响解析</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="扫描技巧"><a href="#扫描技巧" class="headerlink" title="扫描技巧"></a>扫描技巧</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-sS</td>
+<td>TCP SYN scan</td>
+</tr>
+<tr>
+<td>-sT</td>
+<td>Connect scan</td>
+</tr>
+<tr>
+<td>-sA</td>
+<td>ACK scan</td>
+</tr>
+<tr>
+<td>-sW</td>
+<td>Window scan</td>
+</tr>
+<tr>
+<td>-sM</td>
+<td>Maimon scan</td>
+</tr>
+<tr>
+<td>-sU</td>
+<td>UDP Scan</td>
+</tr>
+<tr>
+<td>-sN</td>
+<td>TCP Null scan</td>
+</tr>
+<tr>
+<td>-sF</td>
+<td>FIN scan</td>
+</tr>
+<tr>
+<td>-sX</td>
+<td>Xmas scan</td>
+</tr>
+<tr>
+<td>--scanflags</td>
+<td>Customize TCP scan flags</td>
+</tr>
+<tr>
+<td>-sI zombie host[:probeport]</td>
+<td>Idle scan</td>
+</tr>
+<tr>
+<td>-sY</td>
+<td>SCTP INIT scan</td>
+</tr>
+<tr>
+<td>-sZ</td>
+<td>COOKIE-ECHO scan</td>
+</tr>
+<tr>
+<td>-sO</td>
+<td>IP protocol scan</td>
+</tr>
+<tr>
+<td>-b “FTP relay host”</td>
+<td>FTP bounce scan</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="指定端口和扫描顺序"><a href="#指定端口和扫描顺序" class="headerlink" title="指定端口和扫描顺序"></a>指定端口和扫描顺序</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td>指定端口, 例 -p80,443 or -p1-65535</td>
+</tr>
+<tr>
+<td>-p U:PORT</td>
+<td>扫描UDP端口, 例 -p U:53</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>Fast mode, 只扫描最常用的少数端口</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>不随机扫描端口,默认是随机扫描的</td>
+</tr>
+<tr>
+<td>–top-ports “number”</td>
+<td>扫描开放概率最高的 number 个端口, 默认扫前1000个</td>
+</tr>
+<tr>
+<td>–port-ratio “ratio”</td>
+<td>扫描指定频率以上的端口</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="服务版本识别"><a href="#服务版本识别" class="headerlink" title="服务版本识别"></a>服务版本识别</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-sV</td>
+<td>探测开放端口的服务及版本信息</td>
+</tr>
+<tr>
+<td>--version-intensity “level”</td>
+<td>设置版本扫描强度,强度水平说明了应该使用哪些探测报文。数值越高，服务越有可能被正确识别,默认是7.</td>
+</tr>
+<tr>
+<td>--version-light</td>
+<td>打开轻量级模式,为--version-intensity 2 的别名</td>
+</tr>
+<tr>
+<td>--version-all</td>
+<td>尝试所有探测,为--version-intensity 9 的别名</td>
+</tr>
+<tr>
+<td>--version-trace</td>
+<td>显示出详细的版本侦测过程信息</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="脚本扫描"><a href="#脚本扫描" class="headerlink" title="脚本扫描"></a>脚本扫描</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-sC</td>
+<td>根据端口识别的服务,调用默认脚本</td>
+</tr>
+<tr>
+<td>--script=”Lua scripts”</td>
+<td>调用脚本名称</td>
+</tr>
+<tr>
+<td>--script-args=n1=v1,[n2=v2]</td>
+<td>调用的脚本传递的参数</td>
+</tr>
+<tr>
+<td>--script-args-file=filename</td>
+<td>使用文件传递参数</td>
+</tr>
+<tr>
+<td>--script-trace</td>
+<td>显示所有发送和接收的数据</td>
+</tr>
+<tr>
+<td>--script-updatedb</td>
+<td>更新脚本数据库</td>
+</tr>
+<tr>
+<td>--script-help=”Lua scripts”</td>
+<td>查看指定脚本的帮助</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Archlinux 中 nmap 脚本目录<br>  <code>/usr/share/nmap/scripts/</code><br><br><h6 id="OS-识别"><a href="#OS-识别" class="headerlink" title="OS 识别"></a>OS 识别</h6></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-O</td>
+<td>启用操作系统检测,-A来同时启用操作系统检测和版本检测</td>
+</tr>
+<tr>
+<td>--osscan-limit</td>
+<td>针对指定的目标进行操作系统检测</td>
+</tr>
+<tr>
+<td>--osscan-guess</td>
+<td>推测操作系统检测结果, Nmap默认进行这种匹配</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="时间和性能"><a href="#时间和性能" class="headerlink" title="时间和性能"></a>时间和性能</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-T 0-5</td>
+<td>Set timing template - higher is faster (less accurate)</td>
+</tr>
+<tr>
+<td>--host-timeout TIME</td>
+<td>Give up on target after this long</td>
+</tr>
+<tr>
+<td>--scan-delay TIME <br> --max-scan-delay TIME</td>
+<td>Adjust delay between probes</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="防火墙-IDS躲避和哄骗"><a href="#防火墙-IDS躲避和哄骗" class="headerlink" title="防火墙/IDS躲避和哄骗"></a>防火墙/IDS躲避和哄骗</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f; --mtu VALUE</td>
+<td>指定使用分片、指定数据包的MTU.</td>
+</tr>
+<tr>
+<td>-D decoy1,decoy2,ME</td>
+<td>使用诱饵隐蔽扫描</td>
+</tr>
+<tr>
+<td>-S IP-ADDRESS</td>
+<td>源地址欺骗</td>
+</tr>
+<tr>
+<td>-e INTERFACE</td>
+<td>使用指定的接口</td>
+</tr>
+<tr>
+<td>-g PORTNUM <br> --source-port PORTNUM</td>
+<td>使用指定源端口</td>
+</tr>
+<tr>
+<td>--proxies url1,[url2],…</td>
+<td>使用 HTTP/SOCKS4 代理</td>
+</tr>
+<tr>
+<td>--data-length NUM</td>
+<td>填充随机数据让数据包长度达到NUM</td>
+</tr>
+<tr>
+<td>--ip-options OPTIONS</td>
+<td>使用指定的IP选项来发送数据包</td>
+</tr>
+<tr>
+<td>--ttl VALUE</td>
+<td>设置IP time-to-live 字段</td>
+</tr>
+<tr>
+<td>--spoof-mac ADDR/PREFIX/VEBDOR</td>
+<td>MAC地址伪装</td>
+</tr>
+<tr>
+<td>--badsum</td>
+<td>使用错误的checksum来发送数据包</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="Nmap-输出选项"><a href="#Nmap-输出选项" class="headerlink" title="Nmap 输出选项"></a>Nmap 输出选项</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>提高输出信息的详细度</td>
+</tr>
+<tr>
+<td>-d level</td>
+<td>设置debug级别,最高是9</td>
+</tr>
+<tr>
+<td>-oN</td>
+<td>将标准输出直接写入指定的文件</td>
+</tr>
+<tr>
+<td>-oX</td>
+<td>输出xml文件</td>
+</tr>
+<tr>
+<td>-oS</td>
+<td>转换为Leet语(骇客语)</td>
+</tr>
+<tr>
+<td>-oG</td>
+<td>输出便于通过bash或者perl处理的格式,非xml</td>
+</tr>
+<tr>
+<td>-oA BASENAME</td>
+<td>可将扫描结果以标准格式、XML格式和Grep格式一次性输出</td>
+</tr>
+<tr>
+<td>--reason</td>
+<td>显示端口处于特定状态的原因</td>
+</tr>
+<tr>
+<td>--open</td>
+<td>只输出端口状态为open的端口</td>
+</tr>
+<tr>
+<td>--packet-trace</td>
+<td>显示所有发送或者接收到的数据包</td>
+</tr>
+<tr>
+<td>--iflist</td>
+<td>显示路由信息和接口,便于调试</td>
+</tr>
+<tr>
+<td>--log-errors</td>
+<td>把日志等级为errors/warings的日志输出</td>
+</tr>
+<tr>
+<td>--resume FILENAME</td>
+<td>恢复已停止的扫描<br>(之前用<code>-oG</code>输出到文件的时候被异常中止的话可以使用resume参数来恢复)</td>
+</tr>
+<tr>
+<td>--stylesheet PATH/URL</td>
+<td>设置XSL样式表，转换XML输出</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h6 id="Nmap-其它选项"><a href="#Nmap-其它选项" class="headerlink" title="Nmap 其它选项"></a>Nmap 其它选项</h6><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-6</td>
+<td>开启IPv6</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>OS识别,版本探测,脚本扫描和traceroute</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>打印版本信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>输出帮助</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="0x04-Nmap-总结常用参数"><a href="#0x04-Nmap-总结常用参数" class="headerlink" title="0x04: Nmap 总结常用参数"></a>0x04: Nmap 总结常用参数</h2><h6 id="common-use"><a href="#common-use" class="headerlink" title="common use"></a>common use</h6><ul>
+<li>扫描常见漏洞, OS识别, 版本探测</li>
+<li>nmap -sS -A -v -T3 -Pn –script=vuln Target</li>
+</ul>
+<p><br></p>
+<h2 id="0x05-Reference"><a href="#0x05-Reference" class="headerlink" title="0x05: Reference"></a>0x05: Reference</h2><p>原文<br><a href="http://highon.coffee/docs/nmap/" target="_blank" rel="external">http://highon.coffee/docs/nmap/</a><br><a href="http://drops.wooyun.org/tips/4333/" target="_blank" rel="external">http://drops.wooyun.org/tips/4333/</a><br><br><br>有问题找男人<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man nmap</span><br></pre></td></tr></table></figure></p>
+<p>nmap 非常详细的总结 csdn:</p>
+<ul>
+<li><a href="http://blog.csdn.net/aspirationflow/article/details/7694274" target="_blank" rel="external">http://blog.csdn.net/aspirationflow/article/details/7694274</a></li>
+<li><a href="http://blog.csdn.net/emaste_r/article/details/17840465" target="_blank" rel="external">http://blog.csdn.net/emaste_r/article/details/17840465</a></li>
+<li><a href="http://blog.csdn.net/emaste_r/article/details/17996315" target="_blank" rel="external">http://blog.csdn.net/emaste_r/article/details/17996315</a></li>
+</ul>
+<p>nmap 非常详细的总结 freebuf:</p>
+<ul>
+<li><a href="http://www.freebuf.com/articles/network/32302.html" target="_blank" rel="external">http://www.freebuf.com/articles/network/32302.html</a></li>
+<li><a href="http://www.freebuf.com/sectool/100221.html" target="_blank" rel="external">http://www.freebuf.com/sectool/100221.html</a></li>
+<li><a href="http://www.freebuf.com/vuls/100580.html" target="_blank" rel="external">http://www.freebuf.com/vuls/100580.html</a></li>
+</ul>
+<p>nmap 脚本总结 wooyun:</p>
+<ul>
+<li><a href="http://drops.wooyun.org/tips/2188" target="_blank" rel="external">http://drops.wooyun.org/tips/2188</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="nmap-manual" data-title="Nmap 手册" data-url="http://blog.evilxyz.com/2016/05/01/nmap-manual/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"evilxyz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 xyz
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
