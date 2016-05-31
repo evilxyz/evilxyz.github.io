@@ -16,7 +16,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 <meta property="og:description" content="ssh tips
 linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 本文总结了一些自己常用的ssh高级用法, =.= 好吧, 其实也没那么高级…">
-<meta property="og:updated_time" content="2016-05-31T02:53:15.172Z">
+<meta property="og:updated_time" content="2016-05-31T02:55:53.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh 高级用法">
 <meta name="twitter:description" content="ssh tips
@@ -86,7 +86,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -241,20 +241,18 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 <li>本文总结了一些自己常用的ssh高级用法, =.= 好吧, 其实也没那么高级…</li>
 </ul>
 <a id="more"></a>
-<h3 id="连接成功后执行命令"><a href="#连接成功后执行命令" class="headerlink" title="连接成功后执行命令"></a>连接成功后执行命令</h3><pre><code>我们都知道可以通过SSH获取远程shell，然后运行命令。如果只想运行单个命令的话，直接把命令附加在SSH命令之后即可，如
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh sister <span class="string">"uname -a"</span></span><br><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">'/home/xyz/.ssh/id_rsa'</span>:</span><br><span class="line">Linux evilxyz 4.3.0-kali1-amd64 <span class="comment">#1 SMP Debian 4.3.3-5kali4 (2016-01-13) x86_64 GNU/Linux</span></span><br><span class="line">xyz@evilxyz ~ %</span><br></pre></td></tr></table></figure>
-<pre><code>这个最好结合无须输入密码的SSH登录。如果想获取python版本，直接&quot;ssh hostname python -V&quot;
-
-但有些命令可能会报错，如&quot;top&quot;
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh sister top</span><br><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">'/home/xyz/.ssh/id_rsa'</span>:</span><br><span class="line">TERM environment variable not set.</span><br><span class="line">1 xyz@evilxyz ~ %</span><br></pre></td></tr></table></figure>
-<pre><code>只需加上 `-t` 参数就可以强制分配一个伪终端.
--t     Force pseudo-terminal allocation.
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh -t sister <span class="string">"top"</span></span><br></pre></td></tr></table></figure>
-<pre><code>这里我们执行ssh连接时并没有指定具体的主机名(ip)和用户，而只是&quot;sister&quot;，这是如何做到的呢？且看下文
-</code></pre><h3 id="使用别名"><a href="#使用别名" class="headerlink" title="使用别名"></a>使用别名</h3><pre><code>假如要连接服务器, 一般使用的方法为端口号+服务器地址
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh root@192.168.111.222 -p 222</span><br><span class="line">xyz@evilxyz ~ % ssh root@192.168.111.234 -p 256</span><br></pre></td></tr></table></figure>
-<pre><code>很麻烦, 而且端口号或者其它参数有变动的话, 不一定记得住. 其实只要配置一下 /etc/ssh/ssh_config 文件就可以了.
-</code></pre><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host sister</span><br><span class="line">    HostName <span class="number">192.168</span>.<span class="number">111.222</span></span><br><span class="line">    Port <span class="number">222</span></span><br><span class="line">    <span class="keyword">User</span> <span class="title">root</span></span><br><span class="line"></span><br><span class="line">Host brother</span><br><span class="line">	HostName <span class="number">192.168</span>.<span class="number">111.234</span></span><br><span class="line">	Port <span class="number">256</span></span><br><span class="line">	<span class="keyword">User</span> <span class="title">root</span></span><br></pre></td></tr></table></figure>
+<h3 id="连接成功后执行命令"><a href="#连接成功后执行命令" class="headerlink" title="连接成功后执行命令"></a>连接成功后执行命令</h3><p>我们都知道可以通过SSH获取远程shell，然后运行命令。如果只想运行单个命令的话，直接把命令附加在SSH命令之后即可，如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh sister <span class="string">"uname -a"</span></span><br><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">'/home/xyz/.ssh/id_rsa'</span>:</span><br><span class="line">Linux evilxyz 4.3.0-kali1-amd64 <span class="comment">#1 SMP Debian 4.3.3-5kali4 (2016-01-13) x86_64 GNU/Linux</span></span><br><span class="line">xyz@evilxyz ~ %</span><br></pre></td></tr></table></figure>
+<p>这个最好结合无须输入密码的SSH登录。如果想获取python版本，直接”ssh hostname python -V”</p>
+<p>但有些命令可能会报错，如”top”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh sister top</span><br><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">'/home/xyz/.ssh/id_rsa'</span>:</span><br><span class="line">TERM environment variable not set.</span><br><span class="line">1 xyz@evilxyz ~ %</span><br></pre></td></tr></table></figure>
+<p>只需加上 <code>-t</code> 参数就可以强制分配一个伪终端.<br><code>-t     Force pseudo-terminal allocation.</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh -t sister <span class="string">"top"</span></span><br></pre></td></tr></table></figure>
+<p>这里我们执行ssh连接时并没有指定具体的主机名(ip)和用户，而只是”sister”，这是如何做到的呢？且看下文</p>
+<h3 id="使用别名"><a href="#使用别名" class="headerlink" title="使用别名"></a>使用别名</h3><p>假如要连接服务器, 一般使用的方法为端口号+服务器地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh root@192.168.111.222 -p 222</span><br><span class="line">xyz@evilxyz ~ % ssh root@192.168.111.234 -p 256</span><br></pre></td></tr></table></figure>
+<p>很麻烦, 而且端口号或者其它参数有变动的话, 不一定记得住. 其实只要配置一下 <code>/etc/ssh/ssh_config</code> 文件就可以了.</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host sister</span><br><span class="line">    HostName <span class="number">192.168</span>.<span class="number">111.222</span></span><br><span class="line">    Port <span class="number">222</span></span><br><span class="line">    <span class="keyword">User</span> <span class="title">root</span></span><br><span class="line"></span><br><span class="line">Host brother</span><br><span class="line">	HostName <span class="number">192.168</span>.<span class="number">111.234</span></span><br><span class="line">	Port <span class="number">256</span></span><br><span class="line">	<span class="keyword">User</span> <span class="title">root</span></span><br></pre></td></tr></table></figure>
 <p>连接时就变成这样了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xyz@evilxyz ~ % ssh sister</span><br><span class="line">xyz@evilxyz ~ % ssh brother</span><br></pre></td></tr></table></figure>
 <p>是不是很方便，如果SSH的参数改变的话，修改配置文件就行了，命令不变。</p>
