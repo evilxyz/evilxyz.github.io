@@ -17,7 +17,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 本文总结了一些自己常用的ssh高级用法, =.= 好吧, 其实也没那么高级…">
 <meta property="og:image" content="http://blog.evilxyz.com/assets/image/ssh_x11.png">
-<meta property="og:updated_time" content="2016-05-31T05:35:37.621Z">
+<meta property="og:updated_time" content="2016-05-31T05:38:45.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh 高级用法">
 <meta name="twitter:description" content="ssh tips
@@ -88,7 +88,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -125,7 +125,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/nmap/" style="font-size: 10px;">nmap</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 20px;">勿在浮沙筑高台</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/测试/" style="font-size: 20px;">测试</a>
+						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/nmap/" style="font-size: 10px;">nmap</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 20px;">勿在浮沙筑高台</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/测试/" style="font-size: 20px;">测试</a>
 					</div>
 				</section>
 				
@@ -294,10 +294,8 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 <ul>
 <li>在服务器上，编辑sshd_config启用AllowTcpForwarding选项(可能没有)。</li>
 <li>在服务器上，编辑sshd_config启用X11Forwarding选项。</li>
-<li><p>在服务器上，编辑sshd_config将X11DisplayOffset选项设为10。</p>
-</li>
-<li><p>在客户端上，编辑ssh_config启用ForwardX11选项。</p>
-</li>
+<li>在服务器上，编辑sshd_config将X11DisplayOffset选项设为10。</li>
+<li>在客户端上，编辑ssh_config启用ForwardX11选项。</li>
 </ul>
 <p><img src="/assets/image/ssh_x11.png" alt=""><br><br></p>
 <h3 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h3><h6 id="允许和禁止-Root-登陆"><a href="#允许和禁止-Root-登陆" class="headerlink" title="允许和禁止 Root 登陆"></a>允许和禁止 Root 登陆</h6><ul>
@@ -318,6 +316,15 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/06/01/tar-xz文件如何解压/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          tar.xz文件如何解压
+        
+      </div>
+    </a>
   
   
     <a href="/2016/05/24/SYN-Flood-Attack/" id="article-nav-older" class="article-nav-link-wrap">
