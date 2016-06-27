@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Netcat | Evilxyz Blog</title>
+  <title>netcat 手册 | Evilxyz Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="netcat 简介Netcat用于从TCP/UDP连接中读取或发送网络数据。cat是Linux中查看或连接文件的命令，所以netcat本意为从网络上查看文件内容。而Netcat的作者Hobbit为它添加了非常丰富的功能，使它几乎能够完成网络操作中各式各样的操作，所以Netcat在网络安全领域被称作“TCP/IP的瑞士军刀”。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Netcat">
+<meta property="og:title" content="netcat 手册">
 <meta property="og:url" content="http://blog.evilxyz.com/2016/06/12/netcat-manual/index.html">
 <meta property="og:site_name" content="Evilxyz Blog">
 <meta property="og:description" content="netcat 简介Netcat用于从TCP/UDP连接中读取或发送网络数据。cat是Linux中查看或连接文件的命令，所以netcat本意为从网络上查看文件内容。而Netcat的作者Hobbit为它添加了非常丰富的功能，使它几乎能够完成网络操作中各式各样的操作，所以Netcat在网络安全领域被称作“TCP/IP的瑞士军刀”。">
 <meta property="og:image" content="http://blog.evilxyz.com/assets/image/tools-netcat-01.png">
 <meta property="og:image" content="http://blog.evilxyz.com/assets/image/tools-netcat-02.png">
-<meta property="og:updated_time" content="2016-06-12T12:22:07.464Z">
+<meta property="og:updated_time" content="2016-06-20T03:02:26.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Netcat">
+<meta name="twitter:title" content="netcat 手册">
 <meta name="twitter:description" content="netcat 简介Netcat用于从TCP/UDP连接中读取或发送网络数据。cat是Linux中查看或连接文件的命令，所以netcat本意为从网络上查看文件内容。而Netcat的作者Hobbit为它添加了非常丰富的功能，使它几乎能够完成网络操作中各式各样的操作，所以Netcat在网络安全领域被称作“TCP/IP的瑞士军刀”。">
 <meta name="twitter:image" content="http://blog.evilxyz.com/assets/image/tools-netcat-01.png">
   
@@ -83,7 +83,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/nmap/" style="font-size: 10px;">nmap</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 15px;">勿在浮沙筑高台</a>
+						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 15px;">勿在浮沙筑高台</a>
 					</div>
 				</section>
 				
@@ -213,7 +213,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Netcat
+      netcat 手册
     </h1>
   
 
@@ -267,7 +267,7 @@
 <h3 id="欺骗-HTTP-Headers"><a href="#欺骗-HTTP-Headers" class="headerlink" title="欺骗 HTTP Headers"></a>欺骗 HTTP Headers</h3><p>可以使用 netcat 请求 web 页面</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 192.168.8.32 80</span><br></pre></td></tr></table></figure>
 <p>然后写入 HTTP 请求头<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: ispconfig.org</span><br><span class="line"><span class="attribute">Referrer</span>: mypage.com</span><br><span class="line"><span class="attribute">User-Agent</span>: my-browser</span><br></pre></td></tr></table></figure></p>
-<p>正如你所看到的那样, 你可以伪装任意 Referrer 和 User-Agent . 输入完请求头后, 按下两次回车, 就会看到请求页面返回.<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">HOST</span>: ispconfig.org</span><br><span class="line"><span class="attribute">Referrer</span>: mypage.com</span><br><span class="line"><span class="attribute">User-Agent</span>: my-browser</span><br><span class="line"></span><br><span class="line"><span class="http">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Date</span>: Sun, 12 Jun 2016 11:30:32 GMT</span><br><span class="line"><span class="attribute">Server</span>: Microsoft-IIS/6.0</span><br><span class="line"><span class="attribute">X-Powered-By</span>: ASP.NET</span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: 4.0.30319</span><br><span class="line"><span class="attribute">Set-Cookie</span>: ASP.NET_SessionId=02ufjny0tkfxofwgfii044ji; path=/; HttpOnly</span><br><span class="line"><span class="attribute">Cache-Control</span>: private</span><br><span class="line"><span class="attribute">Content-Type</span>: text/html; charset=utf-8</span><br><span class="line"><span class="attribute">Content-Length</span>: 6105</span><br><span class="line"></span><br><span class="line"><span class="undefined">[...]</span></span></span><br></pre></td></tr></table></figure></p>
+<p>正如你所看到的那样, 你可以伪装任意 Referrer 和 User-Agent . 输入完请求头后, 按下两次回车, 就会看到请求页面返回.<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">HOST</span>: ispconfig.org</span><br><span class="line"><span class="attribute">Referrer</span>: mypage.com</span><br><span class="line"><span class="attribute">User-Agent</span>: my-browser</span><br><span class="line"></span><br><span class="line"><span class="http">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Date</span>: Sun, 12 Jun 2016 11:30:32 GMT</span><br><span class="line"><span class="attribute">Server</span>: Microsoft-IIS/6.0</span><br><span class="line"><span class="attribute">X-Powered-By</span>: ASP.NET</span><br><span class="line"><span class="attribute">X-AspNet-Version</span>: 4.0.30319</span><br><span class="line"><span class="attribute">Set-Cookie</span>: ASP.NET_SessionId=02ufjny0tkfxofwgfii044ji; path=/; HttpOnly</span><br><span class="line"><span class="attribute">Cache-Control</span>: private</span><br><span class="line"><span class="attribute">Content-Type</span>: text/html; charset=utf-8</span><br><span class="line"><span class="attribute">Content-Length</span>: 6105</span><br><span class="line"></span><br><span class="line"><span class="json">[...]</span></span></span><br></pre></td></tr></table></figure></p>
 <h3 id="聊天"><a href="#聊天" class="headerlink" title="聊天"></a>聊天</h3><p>你甚至可以用 netcat 在两个系统间进行命令行聊天.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># server2</span></span><br><span class="line">nc <span class="_">-l</span> -p 1234</span><br><span class="line"><span class="comment"># server2 会一直等到 server1 来连接 1234 端口</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># server1</span></span><br><span class="line">nc server2.example.com 1234</span><br></pre></td></tr></table></figure>
@@ -315,7 +315,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="netcat-manual" data-title="Netcat" data-url="http://blog.evilxyz.com/2016/06/12/netcat-manual/"></div>
+	<div class="ds-thread" data-thread-key="netcat-manual" data-title="netcat 手册" data-url="http://blog.evilxyz.com/2016/06/12/netcat-manual/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

