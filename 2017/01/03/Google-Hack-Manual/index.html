@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: linux | Evilxyz Blog</title>
+  <title>Google Hack Manual | Evilxyz Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I am good at python and django, and i like body-building">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evilxyz Blog">
-<meta property="og:url" content="http://blog.evilxyz.com/tags/linux/index.html">
+  <meta name="description" content="如何利用 Google Hack 搜集 Web 信息，本文介绍常用 Google Hack 语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Hack Manual">
+<meta property="og:url" content="http://blog.evilxyz.com/2017/01/03/Google-Hack-Manual/index.html">
 <meta property="og:site_name" content="Evilxyz Blog">
-<meta property="og:description" content="I am good at python and django, and i like body-building">
+<meta property="og:description" content="如何利用 Google Hack 搜集 Web 信息，本文介绍常用 Google Hack 语法。">
+<meta property="og:updated_time" content="2017-01-03T01:41:37.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evilxyz Blog">
-<meta name="twitter:description" content="I am good at python and django, and i like body-building">
+<meta name="twitter:title" content="Google Hack Manual">
+<meta name="twitter:description" content="如何利用 Google Hack 搜集 Web 信息，本文介绍常用 Google Hack 语法。">
   
     <link rel="alternative" href="/atom.xml" title="Evilxyz Blog" type="application/atom+xml">
   
@@ -192,53 +193,133 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Google-Hack-Manual" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/01/tar-xz文件如何解压/" class="archive-article-date">
-  	<time datetime="2016-06-01T11:08:33.000Z" itemprop="datePublished">Jun 1</time>
+    <div class="article-meta">
+      <a href="/2017/01/03/Google-Hack-Manual/" class="article-date">
+  	<time datetime="2017-01-03T01:37:28.000Z" itemprop="datePublished">2017-01-03</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/01/tar-xz文件如何解压/">tar.xz文件如何解压</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Google Hack Manual
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tar/">tar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xz/">xz</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google/">google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manual/">manual</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如何利用 Google Hack 搜集 Web 信息，本文介绍常用 Google Hack 语法。</p>
+<a id="more"></a>
+<p>Google Hack Manual:</p>
+<ul>
+<li><p>intext: 把网页中的正文内容中的某个字符做为搜索条件.</p>
+</li>
+<li><p>intitle: 搜索网页标题中是否有我们所要找的字符.</p>
+</li>
+<li><p>allintext: 使用方法和intext类似.</p>
+</li>
+<li><p>cache: 搜索google里关于某些内容的缓存,有时候往往能找到一些好东西.</p>
+</li>
+<li><p>filetype: 搜索制定类型的文件，例如：filetype:doc.将返回所有以doc结尾的文件URL.</p>
+</li>
+<li><p>info: 查找指定站点的一些基本信息.</p>
+</li>
+<li><p>inurl: 搜索我们指定的字符是否存在于URL中.<br>例如输入:inurl:admin,将返回N个类似于这样的连接:<a href="http://example.com/admin" target="_blank" rel="external">http://example.com/admin</a>,<br>常用于查找通用漏洞、注入点、管理员登录的URL</p>
+</li>
+<li><p>allinurl:也同inurl类似,可指定多个字符.</p>
+</li>
+<li><p>linkurl: 例如搜索:inurl:example.com可以返回所有和example.com做了链接的URL.</p>
+</li>
+<li><p>site: 搜索指定域名,如site:example.com.将返回所有和example.com有关的URL.</p>
+</li>
+</ul>
+<p>通配符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+ 把google可能忽略的字列如查询范围</span><br><span class="line"></span><br><span class="line">- 把某个字忽略</span><br><span class="line"></span><br><span class="line">~ 同意词</span><br><span class="line"></span><br><span class="line">. 单一的通配符</span><br><span class="line"></span><br><span class="line">* 通配符，可代表多个字母</span><br><span class="line"></span><br><span class="line">“” 精确查询</span><br></pre></td></tr></table></figure>
+<p>常用组合：</p>
+<ul>
+<li><p>site:example.com  查找二级域名</p>
+</li>
+<li><p>site:example.com inurl:admin  找后台</p>
+</li>
+<li><p>site:example.com inurl:upload 找上传</p>
+</li>
+<li><p>site:example.com intitle:管理  找后台</p>
+</li>
+<li><p>site:example.com intext:密码   找敏感信息</p>
+</li>
+<li><p>site:example.com filetype:txt  找敏感信息</p>
+</li>
+<li><p>site:example.com filetype:mdb|ini|php|asp|jsp</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/08/how-to-change-breeze-dark-s-background/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">how to change breeze dark&#39;s background</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Google-Hack-Manual" data-title="Google Hack Manual" data-url="http://blog.evilxyz.com/2017/01/03/Google-Hack-Manual/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"evilxyz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -264,9 +345,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
