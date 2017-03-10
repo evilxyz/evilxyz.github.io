@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: DDOS | Evilxyz Blog</title>
+  <title>centos7 常用配置总结 | Evilxyz Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I am good at python and django, and i like body-building">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evilxyz Blog">
-<meta property="og:url" content="http://blog.evilxyz.com/tags/DDOS/index.html">
+  <meta name="description" content="总结 Centos7 的常规配置, 不想每次配置都要去google.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7 常用配置总结">
+<meta property="og:url" content="http://blog.evilxyz.com/2017/03/10/centos7-常用配置总结/index.html">
 <meta property="og:site_name" content="Evilxyz Blog">
-<meta property="og:description" content="I am good at python and django, and i like body-building">
+<meta property="og:description" content="总结 Centos7 的常规配置, 不想每次配置都要去google.">
+<meta property="og:updated_time" content="2017-03-10T03:18:07.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evilxyz Blog">
-<meta name="twitter:description" content="I am good at python and django, and i like body-building">
+<meta name="twitter:title" content="centos7 常用配置总结">
+<meta name="twitter:description" content="总结 Centos7 的常规配置, 不想每次配置都要去google.">
   
     <link rel="alternative" href="/atom.xml" title="Evilxyz Blog" type="application/atom+xml">
   
@@ -192,53 +193,105 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-centos7-常用配置总结" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/24/SYN-Flood-Attack/" class="archive-article-date">
-  	<time datetime="2016-05-24T01:32:09.000Z" itemprop="datePublished">May 24</time>
+    <div class="article-meta">
+      <a href="/2017/03/10/centos7-常用配置总结/" class="article-date">
+  	<time datetime="2017-03-10T02:43:46.000Z" itemprop="datePublished">2017-03-10</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/24/SYN-Flood-Attack/">SYN Flood Attack</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      centos7 常用配置总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DDOS/">DDOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Destroy/">Destroy</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结 Centos7 的常规配置, 不想每次配置都要去google.</p>
+<a id="more"></a>
+<h2 id="0x01-python"><a href="#0x01-python" class="headerlink" title="0x01: python"></a>0x01: python</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># centos7安装python3和pip3</span></span><br><span class="line">yum install epel-release    <span class="comment"># install epel source</span></span><br><span class="line">yum install python34        <span class="comment"># install python3.4</span></span><br><span class="line">wget https://bootstrap.pypa.io/get-pip.py   <span class="comment"># download pip</span></span><br><span class="line">python3.4 get-pip.py        <span class="comment"># install pip3.4</span></span><br></pre></td></tr></table></figure>
+<h2 id="0x02-shadowsocks"><a href="#0x02-shadowsocks" class="headerlink" title="0x02: shadowsocks"></a>0x02: shadowsocks</h2><ul>
+<li>不造轮了, 直接发链接</li>
+<li><p>大多数都是编译<code>shadowsocks-libev</code>来安装shadowsocks <a href="https://github.com/shadowsocks/shadowsocks-libev" target="_blank" rel="external">https://github.com/shadowsocks/shadowsocks-libev</a></p>
+</li>
+<li><p>其实在本机编译后上传到server上也可以运行</p>
+</li>
+<li>写服务的时候注意ss运行路径和ss的名称</li>
+<li><p>速度慢可以上锐速 <a href="https://github.com/91yun/serverspeeder" target="_blank" rel="external">https://github.com/91yun/serverspeeder</a></p>
+</li>
+<li><p>链接1 <a href="http://morning.work/page/2015-12/install-shadowsocks-on-centos-7.html" target="_blank" rel="external">http://morning.work/page/2015-12/install-shadowsocks-on-centos-7.html</a></p>
+</li>
+<li>链接2 <a href="https://www.ifshow.com/centos-7-installation-and-configuration-shadowsocks/" target="_blank" rel="external">https://www.ifshow.com/centos-7-installation-and-configuration-shadowsocks/</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/03/Google-Hack-Manual/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Google Hack Manual</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="centos7-常用配置总结" data-title="centos7 常用配置总结" data-url="http://blog.evilxyz.com/2017/03/10/centos7-常用配置总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"evilxyz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -264,9 +317,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
