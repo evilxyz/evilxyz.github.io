@@ -17,7 +17,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 本文总结了一些自己常用的ssh高级用法, =.= 好吧, 其实也没那么高级…">
 <meta property="og:image" content="http://blog.evilxyz.com/assets/image/ssh_x11.png">
-<meta property="og:updated_time" content="2016-05-31T05:38:45.612Z">
+<meta property="og:updated_time" content="2017-06-30T05:56:15.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh 高级用法">
 <meta name="twitter:description" content="ssh tips
@@ -50,7 +50,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 		</hgroup>
 
 		
-		<p class="header-subtitle">Security and Body-building</p>
+		<p class="header-subtitle">python,web安全,渗透测试</p>
 		
 
 		
@@ -125,7 +125,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/breeze/" style="font-size: 10px;">breeze</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/manual/" style="font-size: 10px;">manual</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/plasma/" style="font-size: 10px;">plasma</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
+						<a href="/tags/DDOS/" style="font-size: 10px;">DDOS</a> <a href="/tags/Destroy/" style="font-size: 10px;">Destroy</a> <a href="/tags/breeze/" style="font-size: 10px;">breeze</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/getshell/" style="font-size: 10px;">getshell</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/linux/" style="font-size: 13.33px;">linux</a> <a href="/tags/manual/" style="font-size: 10px;">manual</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/phpmyadmin/" style="font-size: 10px;">phpmyadmin</a> <a href="/tags/plasma/" style="font-size: 10px;">plasma</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/tool/" style="font-size: 10px;">tool</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/xz/" style="font-size: 10px;">xz</a> <a href="/tags/为什么/" style="font-size: 10px;">为什么</a> <a href="/tags/勿在浮沙筑高台/" style="font-size: 13.33px;">勿在浮沙筑高台</a>
 					</div>
 				</section>
 				
@@ -172,7 +172,7 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 			  <h1 class="header-author">xyz</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">Security and Body-building</p>
+			<p class="header-subtitle">python,web安全,渗透测试</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -274,8 +274,18 @@ linux 用户应该都很熟悉ssh, 但有些高级用法未必知道.
 <li>ssh sister “chmod 644 /root/.ssh/authorized_keys”</li>
 </ul>
 </li>
-<li><p>配置本机权限</p>
+</ul>
 <ul>
+<li>修改服务器配置<ul>
+<li>RSAAuthentication yes</li>
+<li>PubkeyAuthentication yes</li>
+<li>AuthorizedKeysFile .ssh/authorized_keys</li>
+<li>PasswordAuthentication no</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>配置本机权限<ul>
 <li>chmod 700 /home/xyz/.ssh</li>
 <li>chmod 600 /home/xyz/.ssh/id_rsa</li>
 </ul>

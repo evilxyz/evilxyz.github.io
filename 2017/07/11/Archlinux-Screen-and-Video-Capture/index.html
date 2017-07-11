@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2017 | Evilxyz Blog</title>
+  <title>Archlinux Screen and Video Capture | Evilxyz Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="万丈高楼平地起,勿在浮沙筑高台.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evilxyz Blog">
-<meta property="og:url" content="http://blog.evilxyz.com/archives/2017/index.html">
+  <meta name="description" content="how to capture screen and video on archlinux ?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archlinux Screen and Video Capture">
+<meta property="og:url" content="http://blog.evilxyz.com/2017/07/11/Archlinux-Screen-and-Video-Capture/index.html">
 <meta property="og:site_name" content="Evilxyz Blog">
-<meta property="og:description" content="万丈高楼平地起,勿在浮沙筑高台.">
+<meta property="og:description" content="how to capture screen and video on archlinux ?">
+<meta property="og:updated_time" content="2017-07-11T16:02:51.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evilxyz Blog">
-<meta name="twitter:description" content="万丈高楼平地起,勿在浮沙筑高台.">
+<meta name="twitter:title" content="Archlinux Screen and Video Capture">
+<meta name="twitter:description" content="how to capture screen and video on archlinux ?">
   
     <link rel="alternative" href="/atom.xml" title="Evilxyz Blog" type="application/atom+xml">
   
@@ -192,146 +193,94 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Archlinux-Screen-and-Video-Capture" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/11/Archlinux-Screen-and-Video-Capture/" class="archive-article-date">
-  	<time datetime="2017-07-11T15:54:01.000Z" itemprop="datePublished">Jul 11</time>
+    <div class="article-meta">
+      <a href="/2017/07/11/Archlinux-Screen-and-Video-Capture/" class="article-date">
+  	<time datetime="2017-07-11T15:54:01.000Z" itemprop="datePublished">2017-07-11</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/Archlinux-Screen-and-Video-Capture/">Archlinux Screen and Video Capture</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Archlinux Screen and Video Capture
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>how to capture screen and video on archlinux ?</p>
+<a id="more"></a>
+<h2 id="0x01-scrot"><a href="#0x01-scrot" class="headerlink" title="0x01 scrot"></a>0x01 scrot</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 交互式选择窗体,截图后放到Pictures目录下</span></span><br><span class="line">scrot <span class="_">-s</span> <span class="_">-e</span> <span class="string">'mv /home/xyz/$f /home/xyz/Pictures/'</span></span><br></pre></td></tr></table></figure>
+<h2 id="0x02-ffmpeg"><a href="#0x02-ffmpeg" class="headerlink" title="0x02 ffmpeg"></a>0x02 ffmpeg</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 录制分辨率为1366x768的视频流到output.mp4</span></span><br><span class="line">sudo ffmpeg -video_size 1366x768 -framerate 25 <span class="_">-f</span> x11grab -i :0.0 output.mp4</span><br></pre></td></tr></table></figure>
+<h2 id="0x03-man"><a href="#0x03-man" class="headerlink" title="0x03 man"></a>0x03 man</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 具体参数不懂看手册</span></span><br><span class="line">man scrot</span><br><span class="line">man ffmpeg</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/18/hashcat-manual/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hashcat manual</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/18/hashcat-manual/" class="archive-article-date">
-  	<time datetime="2017-06-18T01:57:13.000Z" itemprop="datePublished">Jun 18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/hashcat-manual/">hashcat manual</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/centos7-常用配置总结/" class="archive-article-date">
-  	<time datetime="2017-03-10T02:43:46.000Z" itemprop="datePublished">Mar 10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/centos7-常用配置总结/">centos7 常用配置总结</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/03/Google-Hack-Manual/" class="archive-article-date">
-  	<time datetime="2017-01-03T01:37:28.000Z" itemprop="datePublished">Jan 3</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/03/Google-Hack-Manual/">Google Hack Manual</a>
-    </h1>
-  
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Archlinux-Screen-and-Video-Capture" data-title="Archlinux Screen and Video Capture" data-url="http://blog.evilxyz.com/2017/07/11/Archlinux-Screen-and-Video-Capture/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"evilxyz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google/">google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manual/">manual</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -357,8 +306,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
